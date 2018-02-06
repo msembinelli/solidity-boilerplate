@@ -1,0 +1,15 @@
+{
+  "name": "solidity-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "git@github.com:msembinelli/solidity-boilerplate.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "solc": "^0.4.19"
+  }
+}
