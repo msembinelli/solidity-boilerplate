@@ -2,6 +2,7 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
 const YAML = require('yamljs');
+const fs = require('fs');
 
 config = YAML.load('config.yml');
 
@@ -23,6 +24,19 @@ const deploy = async () => {
         .deploy({ data: bytecode, arguments: ['Hi there!']})
         .send({ from: accounts[0], gas: '1000000' });
 
+    var output = {
+        contract: {
+            abi: interface,
+            address: result.options.address
+        }
+    };
+
+    fs.writeFile('output.yml', YAML.stringify(output), function (err) {
+        if (err) throw err;
+        console.log('Output contract abi and address saved!');
+        });
+
+    console.log(interface);
     console.log('Contract deployed to', result.options.address);
 };
 deploy();
