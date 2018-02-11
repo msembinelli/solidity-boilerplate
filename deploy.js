@@ -24,14 +24,14 @@ const deploy = async () => {
         .deploy({ data: bytecode, arguments: ['Hi there!']})
         .send({ from: accounts[0], gas: '1000000' });
 
-    var output = {
+    var outputContract = {
         contract: {
             abi: interface,
             address: result.options.address
         }
     };
 
-    fs.writeFile('output.yml', YAML.stringify(output), function (err) {
+    fs.writeFile('contract.yml', YAML.stringify(outputContract, null, 2), function (err) {
         if (err) throw err;
         console.log('Output contract abi and address saved!');
         });
