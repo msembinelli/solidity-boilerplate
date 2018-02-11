@@ -14,4 +14,6 @@ The tests run a deploy and run the contract on a local simulated ethereum networ
 ## Deploying contract to a public ethereum network
 Please copy/rename `config.template.yml` to `config.yml` and populate with your HDWalletProvider settings.
 
+A url + token can be provided by https://infura.io/.
+
 You can deploy with `node deploy.js`.
